@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+*:hover,
+*:focus {
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* BODY */
 body {
   font-family: "Roboto", sans-serif;
@@ -120,6 +125,17 @@ a {
 .link:focus {
   color: #404bbf;
   text-decoration: none;
+  position: relative;
+}
+
+.manu-link:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #404bbf;
 }
 
 /* HEADER address */
@@ -162,6 +178,8 @@ a {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+
+  /* max-width: 1440px; */
 }
 
 /* HERO title */
@@ -316,17 +334,15 @@ a {
 /* SECTION 2 container paragraph */
 .paragraph {
   text-align: center;
+  margin-bottom: 8px;
 }
-
 /* SECTION 2 social links*/
 .social-links {
   display: flex;
+  gap: 24px;
+  margin: 0 16px;
 }
 
-.social-list {
-  /* display: flex;
-  gap: 24px; */
-}
 .social-list .links {
   display: flex;
   gap: 24px;
@@ -334,16 +350,18 @@ a {
   align-items: center;
   width: 40px;
   height: 40px;
-  border-radius: 50% 50%;
+  border-radius: 50%;
   background-color: #4d5ae5;
 }
 
 .social-list .links:hover {
   background-color: #404bbf;
 }
-
-.icon {
-  fill: #fff;
+/* SECTION 2 social ikon */
+.social-list .links .icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
 }
 
 /* SECTION 3 / Portfolio */
@@ -370,13 +388,46 @@ a {
 
 .portfolio-item {
   width: calc((100% - 24px * 2) / 3);
+  
+  position: relative;
+  overflow: hidden;
 }
+
+/* SECTION 3 overlay */
+.overlay {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  background-color: #4d5ae5;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 40px;
+  padding-bottom: 164px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: translatey(100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.portfolio-item:hover .overlay {
+  transform: translateY(0);
+}
+  
 /* SECTION 3 box */
 .box {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
   border-top: none;
 }
+
 /* SECTION 3 box title */
 .portfolio-item .box .titl {
   color: #2e2f42;
@@ -400,11 +451,19 @@ a {
 .footer {
   background: #2e2f42;
   color: #f4f4fd;
+  display: flex;
 
   padding-bottom: 100px;
   padding-top: 100px;
 }
 
+.footer .container {
+  display: flex;
+}
+
+.footer-container-logo {
+  margin-right: 120px;
+}
 /* FOOTER logo */
 .footer-logo {
   color: #4d5ae5;
@@ -428,6 +487,13 @@ a {
   color: #f4f4fd;
   font-size: 16px;
   letter-spacing: 0.32px;
-
   width: 264px;
+}
+
+.footer-text {
+  margin-bottom: 16px;
+}
+/* FOOTER links*/
+.footer .social-links {
+  margin: 0;
 }
