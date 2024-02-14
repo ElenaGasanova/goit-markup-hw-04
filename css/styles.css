@@ -226,7 +226,7 @@ a {
 
   padding: 16px 32px;
   
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero .container .button:hover,
@@ -374,10 +374,13 @@ a {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-list .links:hover ,.links:focus {
+.social-list .links:hover ,
+.social-list .links:focus {
   background-color: #404bbf;
 }
 .social-list .icon {
+  width: 16px;
+  height: 16px;
   fill: #f4f4fd;
 }
 /* and SECTION-2 */
@@ -434,7 +437,7 @@ a {
   width: 100%;
   height: 100%;
   transform: translatey(100%);
-  transition: transform 250ms ease-in-out;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   padding-bottom: 164px;
 }
@@ -537,7 +540,11 @@ a {
   fill: #f4f4fd;
 }
 /* FOOTER / list*/
-footer .social-list {
+.footer .social-list {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer .links:hover ,
+.footer .links:focus {
+  background-color: #31d0aa;
 }
 /* and FOOTER */
